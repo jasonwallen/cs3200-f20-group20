@@ -1,4 +1,4 @@
-package com.example.wap;
+package com.example.myapp2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
