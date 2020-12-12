@@ -1,7 +1,12 @@
 package com.example.myapp2.models;
 
+import javax.persistence.*;
+
+@Entity
 public class PlaylistCreator {
-  private Integer id;
+  @Id
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private int id;
   private String username;
   public Integer getId() {
     return id;
