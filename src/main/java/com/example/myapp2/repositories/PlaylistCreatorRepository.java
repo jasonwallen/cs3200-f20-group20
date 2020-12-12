@@ -1,7 +1,6 @@
-package repositories;
-import java.util.Optional;
+package com.example.myapp2.repositories;
 import org.springframework.data.repository.CrudRepository;
-import com.example.myapp2.PlaylistCreator;
+import com.example.myapp2.models.PlaylistCreator;
 
 public interface PlaylistCreatorRepository extends
     CrudRepository<PlaylistCreator, Integer> {

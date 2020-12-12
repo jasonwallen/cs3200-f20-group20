@@ -1,6 +1,6 @@
-package com.example.myapp2;
+package com.example.myapp2.models;
 
-public class PlaylistListener {
+public class PlaylistCreator {
   private Integer id;
   private String username;
   public Integer getId() {
@@ -15,8 +15,8 @@ public class PlaylistListener {
   public void setUsername(String username) {
     this.username = username;
   }
-  public PlaylistListener() {    }
-  public PlaylistListener(Integer id, String username) {
+  public PlaylistCreator() {    }
+  public PlaylistCreator(Integer id, String username) {
     this.id = id;
     this.username = username;
   }

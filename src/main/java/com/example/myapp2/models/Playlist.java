@@ -1,4 +1,4 @@
-package com.example.myapp2;
+package com.example.myapp2.models;
 
 public class Playlist {
   private Integer id;
