@@ -7,7 +7,8 @@ import com.example.myapp2.repositories.PlaylistCreatorRepository;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"com.example.myapp2.repositories"})
+@ComponentScan({"com.example.myapp2.repositories", "com.example.myapp2.controllers",
+"com.example.myapp2.daos", "com.example.myapp2.models"})
 public class DemoApplication {
 
 	public static void main(String[] args) {
