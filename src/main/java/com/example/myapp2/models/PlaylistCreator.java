@@ -3,6 +3,7 @@ package com.example.myapp2.models;
 import javax.persistence.*;
 
 @Entity
+// @Table(name="playlist_listener")
 public class PlaylistCreator {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
