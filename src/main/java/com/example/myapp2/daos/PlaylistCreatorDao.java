@@ -20,4 +20,23 @@ public class PlaylistCreatorDao {
       @PathVariable("cid") Integer creatorId) {
     return repository.findById(creatorId).get();
   }
+  @GetMapping("createPlaylistCreator")
+  public PlaylistCreator createMovie() {
+    PlaylistCreator playlistCreator = new PlaylistCreator();
+    playlistCreator.setUsername("New Playlist Creator");
+    return repository.save(playlistCreator);
+  }
+  @GetMapping("deletePlaylistCreator/{id}")
+  public void deletePlaylistCreator(
+          @PathVariable("id") Integer id) {
+    repository.deleteById(id);
+  }
+  @GetMapping("renamePlaylistCreator/{id}/{username}")
+  public PlaylistCreator renamePlaylistCreator(
+          @PathVariable("id") Integer id,
+          @PathVariable("newTitle") String newUsername) {
+    PlaylistCreator playlistCreator = repository.findById(id).get();
+    playlistCreator.setUsername(newUsername);
+    return repository.save(playlistCreator);
+  }
 }
