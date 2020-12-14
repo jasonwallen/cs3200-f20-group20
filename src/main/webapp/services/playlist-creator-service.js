@@ -1,9 +1,9 @@
 
-const FIND_ALL_PLAYLIST_CREATORS = "https://databasedesignfinalplaylist.herokuapp.com/findAllPlaylistCreators"
-const FIND_PLAYLIST_CREATOR_BY_ID = "https://databasedesignfinalplaylist.herokuapp.com/findPlaylistCreatorById"
-const CREATE_PLAYLIST_CREATOR_URL = "https://databasedesignfinalplaylist.herokuapp.com/createPlaylistCreator"
-const DELETE_PLAYLIST_CREATOR_URL = "https://databasedesignfinalplaylist.herokuapp.com/deletePlaylistCreator"
-const RENAME_PLAYLIST_CREATOR = "https://databasedesignfinalplaylist.herokuapp.com/renamePlaylistCreator"
+const FIND_ALL_PLAYLIST_CREATORS = "https://databasedesignfinalplaylist.herokuapp.com/playlists/findAllPlaylistCreators"
+const FIND_PLAYLIST_CREATOR_BY_ID = "https://databasedesignfinalplaylist.herokuapp.com/playlists/findPlaylistCreatorById"
+const CREATE_PLAYLIST_CREATOR_URL = "https://databasedesignfinalplaylist.herokuapp.com/playlists/createPlaylistCreator"
+const DELETE_PLAYLIST_CREATOR_URL = "https://databasedesignfinalplaylist.herokuapp.com/playlists/deletePlaylistCreator"
+const RENAME_PLAYLIST_CREATOR = "https://databasedesignfinalplaylist.herokuapp.com/playlists/renamePlaylistCreator"
 
 const findAllPlaylistCreators = () =>
     fetch(`${FIND_ALL_PLAYLIST_CREATORS}`)
