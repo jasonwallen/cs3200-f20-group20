@@ -15,13 +15,13 @@ public class PlaylistCreatorDao {
   public Iterable<PlaylistCreator> findAllPlaylistCreators() {
     return repository.findAll();
   }
-  @GetMapping("/findPlaylistCreatorById/{sid}")
+  @GetMapping("/findPlaylistCreatorById/{cid}")
   public PlaylistCreator findPlaylistCreatorById(
       @PathVariable("cid") Integer creatorId) {
     return repository.findById(creatorId).get();
   }
   @GetMapping("/createPlaylistCreator")
-  public PlaylistCreator createMovie() {
+  public PlaylistCreator createPlaylistCreator() {
     PlaylistCreator playlistCreator = new PlaylistCreator();
     playlistCreator.setUsername("New Playlist Creator");
     return repository.save(playlistCreator);
@@ -31,10 +31,10 @@ public class PlaylistCreatorDao {
           @PathVariable("id") Integer id) {
     repository.deleteById(id);
   }
-  @GetMapping("/renamePlaylistCreator/{id}/{username}")
+  @GetMapping("/renamePlaylistCreator/{id}/{newUsername}")
   public PlaylistCreator renamePlaylistCreator(
           @PathVariable("id") Integer id,
-          @PathVariable("newTitle") String newUsername) {
+          @PathVariable("newUsername") String newUsername) {
     PlaylistCreator playlistCreator = repository.findById(id).get();
     playlistCreator.setUsername(newUsername);
     return repository.save(playlistCreator);

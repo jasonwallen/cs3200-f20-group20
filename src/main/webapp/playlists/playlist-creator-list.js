@@ -29,7 +29,7 @@ return(
     this.state.playlistCreators.map(playlistCreator =>
     <tr>
       <td>
-        {playlistCreator.title}
+        {playlistCreator.username}
       </td>
       <td>
         <button onClick={() => this.deletePlaylistCreator(playlistCreator.id)}>

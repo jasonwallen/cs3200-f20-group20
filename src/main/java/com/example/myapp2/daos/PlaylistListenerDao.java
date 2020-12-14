@@ -17,7 +17,27 @@ public class PlaylistListenerDao {
   }
   @GetMapping("/findPlaylistListenerById/{sid}")
   public PlaylistListener findPlaylistListenerById(
-      @PathVariable("lid") Integer listenerId) {
+      @PathVariable("sid") Integer listenerId) {
     return repository.findById(listenerId).get();
   }
+  @GetMapping("/createPlaylistListener")
+  public PlaylistListener createPlaylistListener() {
+    PlaylistListener playlistListener = new PlaylistListener();
+    playlistListener.setUsername("New Playlist Listener");
+    return repository.save(playlistListener);
+  }
+  @GetMapping("/deletePlaylistListener/{id}")
+  public void deletePlaylistListener(
+          @PathVariable("id") Integer id) {
+    repository.deleteById(id);
+  }
+  @GetMapping("/renamePlaylistListener/{id}/{newUsername}")
+  public PlaylistListener renamePlaylistListener(
+          @PathVariable("id") Integer id,
+          @PathVariable("newUsername") String newUsername) {
+    PlaylistListener playlistListener = repository.findById(id).get();
+    playlistListener.setUsername(newUsername);
+    return repository.save(playlistListener);
+  }
 }
+
