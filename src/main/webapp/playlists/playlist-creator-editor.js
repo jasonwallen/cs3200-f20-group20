@@ -1,7 +1,7 @@
 class PlaylistCreatorEditor extends React.Component {
 
   state = {
-    playlistCreator: {}
+    playlistCreators: {}
   }
 
   findPlaylistCreatorById = (id) =>

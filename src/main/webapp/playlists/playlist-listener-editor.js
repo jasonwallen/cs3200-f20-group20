@@ -1,7 +1,7 @@
 class PlaylistListenerEditor extends React.Component {
 
     state = {
-        playlistListener: {}
+        playlistListeners: {}
     }
 
     findPlaylistListenerById = (id) =>
