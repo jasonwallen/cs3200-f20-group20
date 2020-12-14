@@ -1,8 +1,8 @@
-const FIND_ALL_PLAYLIST_LISTENERS = "https://databasedesignfinalplaylist.herokuapp.com/findAllPlaylistListeners"
-const FIND_PLAYLIST_LISTENER_BY_ID = "https://databasedesignfinalplaylist.herokuapp.com/findPlaylistListenerById"
-const CREATE_PLAYLIST_LISTENER_URL = "https://databasedesignfinalplaylist.herokuapp.com/createPlaylistListener"
-const DELETE_PLAYLIST_LISTENER_URL = "https://databasedesignfinalplaylist.herokuapp.com/deletePlaylistListener"
-const RENAME_PLAYLIST_LISTENER = "https://databasedesignfinalplaylist.herokuapp.com/renamePlaylistListener"
+const FIND_ALL_PLAYLIST_LISTENERS = "http://localhost:8080/findAllPlaylistListeners"
+const FIND_PLAYLIST_LISTENER_BY_ID = "http://localhost:8080/findPlaylistListenerById"
+const CREATE_PLAYLIST_LISTENER_URL = "http://localhost:8080/createPlaylistListener"
+const DELETE_PLAYLIST_LISTENER_URL = "http://localhost:8080/deletePlaylistListener"
+const RENAME_PLAYLIST_LISTENER = "http://localhost:8080/renamePlaylistListener"
 
 const findAllPlaylistListeners = () =>
     fetch(`${FIND_ALL_PLAYLIST_LISTENERS}`)
