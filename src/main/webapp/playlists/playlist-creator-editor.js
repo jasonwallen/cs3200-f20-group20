@@ -1,7 +1,7 @@
 class PlaylistCreatorEditor extends React.Component {
 
   state = {
-    playlistCreators: {}
+    playlistCreator: {}
   }
 
   findPlaylistCreatorById = (id) =>
@@ -13,32 +13,43 @@ class PlaylistCreatorEditor extends React.Component {
     this.findPlaylistCreatorById(id)
   }
 
-  savePlaylistCreator = () =>
-      renamePlaylistCreator(this.state.playlistCreator)
+    submitForm = () =>
+        renamePlaylistCreator(this.state.playlistCreator)
+            .then(this.findPlaylistCreatorById)
 
-  render() {
-    return(
-        <div className="container">
-          <h1>Playlist Creator Editor {this.state.playlistCreator.username}</h1>
-          <input className="form-control" readOnly={true} value={this.state.playlistCreator.id}/>
-          <input
-              onChange={(event) => this.setState({
-                playlistCreator: {
-                  ...this.state.playlistCreator,
-                  title: event.target.value
-                }
-              })}
-              className="form-control"
-              value={this.state.playlistCreator.username}/>
-          <button onClick={this.savePlaylistCreator}>
-            Save
-          </button>
-          <a href="playlist-creator-list.html">
-            Done
-          </a>
-        </div>
-    )
-  }
+    render() {
+        return(
+            <div className="container-fluid">
+                <h1>Playlist Creator Editor {this.state.playlistCreator.username}</h1>
+                <form>
+                    <input
+                        value={this.state.playlistCreator.id}
+                        className="form-control"
+                        readOnly={true}/>
+                    <input
+                        onChange={
+                            (event) =>
+                                this.setState({
+                                    playlistCreator: {...this.state.playlistCreator, username: event.target.value}
+                                })}
+                        className="form-control"
+                        value={this.state.playlistCreator.username}/>
+                    <button
+                        type="button"
+                        onClick={() => this.submitForm()}
+                        className="btn btn-success">
+                        Save
+                    </button>
+                    <a className="btn btn-danger" href="./playlist-creator-list.html">
+                        Cancel
+                    </a>
+                </form>
+                {/*<a href={`./section-list.html?courseId=${this.state.course.courseId}`}>*/}
+                {/*    Playlists*/}
+                {/*</a>*/}
+            </div>
+        )
+    }
 }
 
 ReactDOM.render(

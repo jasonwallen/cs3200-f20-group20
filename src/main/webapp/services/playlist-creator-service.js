@@ -21,5 +21,5 @@ const deletePlaylistCreator = (id) =>
     fetch(`${DELETE_PLAYLIST_CREATOR_URL}/${id}`)
 
 const renamePlaylistCreator = (playlistCreator) =>
-    fetch(`${RENAME_PLAYLIST_CREATOR}/${playlistCreator.id}/${playlistCreator.title}`)
+    fetch(`${RENAME_PLAYLIST_CREATOR}/${playlistCreator.id}/${playlistCreator.username}`)
     .then(response => response.json())

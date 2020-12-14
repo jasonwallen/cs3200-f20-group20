@@ -30,7 +30,7 @@ class PlaylistCreatorList extends React.Component {
              href="../index.html">
             Home
           </a>
-          <h1>PlaylistCreator List</h1>
+          <h1>Playlist Creator List</h1>
           <table className="table">
               <thead>
               <tr>
@@ -47,7 +47,7 @@ class PlaylistCreatorList extends React.Component {
                     <td>{playlistCreator.username}</td>
                     <td>
                       <a className="btn btn-primary float-right"
-                         href={`/playlist-creator-editor.html?playlistCreatorId=${playlistCreator.id}`}>
+                         href={`./playlist-creator-editor.html?id=${playlistCreator.id}`}>
                         Edit
                       </a>
                       <button className="btn btn-danger float-right"
