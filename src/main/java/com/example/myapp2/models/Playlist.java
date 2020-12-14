@@ -1,6 +1,17 @@
 package com.example.myapp2.models;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.*;
+
+@Entity
+@Table(name="playlists")
 public class Playlist {
+  @Id
+  @GeneratedValue(strategy= GenerationType.IDENTITY)
+  @Column(name="id")
   private Integer id;
   private String title;
   private Integer playlistCreatorId;
@@ -18,27 +29,22 @@ public class Playlist {
   public void setTitle(String title) {
     this.title = title;
   }
-
   public Integer getPlaylistCreatorId() {
     return playlistCreatorId;
   }
-
   public void setPlaylist_creator_id() {
     this.playlistCreatorId = playlistCreatorId;
   }
-
-
   public void setPlaylist_listener_id() {
     this.playlistListenerId = playlistListenerId;
   }
-
   public Integer getPlaylistListenerId() {
     return playlistListenerId;
   }
 
 
 
-  public Playlist() {    }
+/*  public Playlist() {    }
   public Playlist(Integer id, String title, Integer playlist_creator_id,
       Integer playlist_listener_id) {
     this.id = id;
@@ -50,4 +56,6 @@ public class Playlist {
     return id + ", " + title + ", " + playlistCreatorId
         + ", " + playlistListenerId;
   }
+
+ */
 }
