@@ -11,8 +11,8 @@ class PlaylistCreatorList extends React.Component {
       createPlaylistCreator()
           .then(() => this.findAllPlaylistCreators())
 
-  deletePlaylistCreator = (playlistCreatorId) =>
-      deletePlaylistCreator(playlistCreatorId)
+  deletePlaylistCreator = (id) =>
+      deletePlaylistCreator(id)
           .then(() => this.findAllPlaylistCreators())
 
   componentDidMount = () =>

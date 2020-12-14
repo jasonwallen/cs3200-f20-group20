@@ -3,11 +3,12 @@ package com.example.myapp2.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="playlist_listener")
+@Table(name="playlist_creator")
 public class PlaylistCreator {
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  private int id;
+  @Column(name="id")
+  private Integer id;
   private String username;
   public Integer getId() {
     return id;
@@ -21,12 +22,12 @@ public class PlaylistCreator {
   public void setUsername(String username) {
     this.username = username;
   }
-  public PlaylistCreator() {    }
-  public PlaylistCreator(Integer id, String username) {
-    this.id = id;
-    this.username = username;
-  }
-  public String toString() {
-    return id + ", " + username;
-  }
+//  public PlaylistCreator() {    }
+//  public PlaylistCreator(Integer id, String username) {
+//    this.id = id;
+//    this.username = username;
+//  }
+//  public String toString() {
+//    return id + ", " + username;
+//  }
 }
