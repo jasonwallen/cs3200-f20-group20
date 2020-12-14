@@ -32,10 +32,10 @@ public class Playlist {
   public Integer getPlaylistCreatorId() {
     return playlistCreatorId;
   }
-  public void setPlaylist_creator_id() {
+  public void setPlaylist_creator_id(int playlistCreatorId) {
     this.playlistCreatorId = playlistCreatorId;
   }
-  public void setPlaylist_listener_id() {
+  public void setPlaylist_listener_id(int playlistListenerId) {
     this.playlistListenerId = playlistListenerId;
   }
   public Integer getPlaylistListenerId() {

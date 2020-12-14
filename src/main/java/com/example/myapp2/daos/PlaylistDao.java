@@ -24,10 +24,12 @@ public class PlaylistDao {
   public Playlist createPlaylist() {
     Playlist playlist = new Playlist();
     playlist.setTitle("New Playlist");
+    playlist.setPlaylist_creator_id(-1);
+    playlist.setPlaylist_listener_id(-1);
     return playlistRepository.save(playlist);
   }
   @GetMapping("/deletePlaylist/{id}")
-  public void deletePlaylistCreator(
+  public void deletePlaylist(
       @PathVariable("id") Integer id) {
     playlistRepository.deleteById(id);
   }
