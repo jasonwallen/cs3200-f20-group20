@@ -21,34 +21,46 @@ class PlaylistListenerList extends React.Component {
 
     render() {
         return(
-            <div>
-                <h1>PlaylistListener List</h1>
-                <table>
+            <div className="container-fluid">
+                <button
+                    className="btn btn-success float-right"
+                    onClick={() => this.createPlaylistListener()}>
+                    Create
+                </button>
+                <a className="btn btn-danger float-right"
+                   href="../index.html">
+                    Home
+                </a>
+                <h1>Playlist Listener List</h1>
+                <table className="table">
+                    <thead>
+                    <tr>
+                        <th>PlaylistListenerId</th>
+                        <th>Username</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
                     <tbody>
                     {
-                        this.state.playlistListeners.map(playlistListener =>
-                            <tr>
+                        this.state.playlistListeners.map((playlistListener) =>
+                            <tr key={playlistListener.id}>
+                                <td>{playlistListener.id}</td>
+                                <td>{playlistListener.username}</td>
                                 <td>
-                                    {playlistListener.username}
-                                </td>
-                                <td>
-                                    <button onClick={() => this.deletePlaylistListener(playlistListener.id)}>
-                                        Delete
-                                    </button>
-                                </td>
-                                <td>
-                                    <a href={`playlistListener-editor.html?id=${playlistListener.id}`}>
+                                    <a className="btn btn-primary float-right"
+                                       href={`./playlist-listener-editor.html?id=${playlistListener.id}`}>
                                         Edit
                                     </a>
+                                    <button className="btn btn-danger float-right"
+                                            onClick={() => this.deletePlaylistListener(playlistListener.id)}>
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                         )
                     }
                     </tbody>
                 </table>
-                <button onClick={this.createPlaylistListener}>
-                    Create
-                </button>
             </div>
         )
     }

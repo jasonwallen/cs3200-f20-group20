@@ -20,5 +20,5 @@ const deletePlaylistListener = (id) =>
     fetch(`${DELETE_PLAYLIST_LISTENER_URL}/${id}`)
 
 const renamePlaylistListener = (playlistListener) =>
-    fetch(`${RENAME_PLAYLIST_LISTENER}/${playlistListener.id}/${playlistListener.title}`)
+    fetch(`${RENAME_PLAYLIST_LISTENER}/${playlistListener.id}/${playlistListener.username}`)
         .then(response => response.json())

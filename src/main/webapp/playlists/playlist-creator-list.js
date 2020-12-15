@@ -34,7 +34,7 @@ class PlaylistCreatorList extends React.Component {
           <table className="table">
               <thead>
               <tr>
-                  <th>PlaylistCreator ID</th>
+                  <th>PlaylistCreatorId</th>
                   <th>Username</th>
                   <th>&nbsp;</th>
               </tr>

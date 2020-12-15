@@ -1,7 +1,7 @@
 class PlaylistListenerEditor extends React.Component {
 
     state = {
-        playlistListeners: {}
+        playlistListener: {}
     }
 
     findPlaylistListenerById = (id) =>
@@ -13,29 +13,40 @@ class PlaylistListenerEditor extends React.Component {
         this.findPlaylistListenerById(id)
     }
 
-    savePlaylistListener = () =>
+    submitForm = () =>
         renamePlaylistListener(this.state.playlistListener)
+            .then(this.findPlaylistListenerById)
 
     render() {
         return(
-            <div className="container">
+            <div className="container-fluid">
                 <h1>Playlist Listener Editor {this.state.playlistListener.username}</h1>
-                <input className="form-control" readOnly={true} value={this.state.playlistListener.id}/>
-                <input
-                    onChange={(event) => this.setState({
-                        playlistListener: {
-                            ...this.state.playlistListener,
-                            title: event.target.value
-                        }
-                    })}
-                    className="form-control"
-                    value={this.state.playlistListener.username}/>
-                <button onClick={this.savePlaylistListener}>
-                    Save
-                </button>
-                <a href="playlist-listener-list.html">
-                    Done
-                </a>
+                <form>
+                    <input
+                        value={this.state.playlistListener.id}
+                        className="form-control"
+                        readOnly={true}/>
+                    <input
+                        onChange={
+                            (event) =>
+                                this.setState({
+                                    playlistListener: {...this.state.playlistListener, username: event.target.value}
+                                })}
+                        className="form-control"
+                        value={this.state.playlistListener.username}/>
+                    <button
+                        type="button"
+                        onClick={() => this.submitForm()}
+                        className="btn btn-success">
+                        Save
+                    </button>
+                    <a className="btn btn-danger" href="./playlist-listener-list.html">
+                        Cancel
+                    </a>
+                </form>
+                {/*<a href={`./section-list.html?courseId=${this.state.course.courseId}`}>*/}
+                {/*    Playlists*/}
+                {/*</a>*/}
             </div>
         )
     }
