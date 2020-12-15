@@ -31,6 +31,10 @@ class PlaylistListenerList extends React.Component {
                    href="../index.html">
                     Home
                 </a>
+                <a className="btn btn-primary float-right"
+                   href="./playlist-readonly-list.html">
+                    Playlist List
+                </a>
                 <h1>Playlist Listener List</h1>
                 <table className="table">
                     <thead>
