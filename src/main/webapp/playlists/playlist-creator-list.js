@@ -30,8 +30,8 @@ class PlaylistCreatorList extends React.Component {
              href="../index.html">
             Home
           </a>
-          <a className="btn btn-danger float-right"
-             href="../playlist-list.html">
+          <a className="btn btn-primary float-right"
+             href="./playlist-list.html">
             Playlist List
           </a>
           <h1>Playlist Creator List</h1>

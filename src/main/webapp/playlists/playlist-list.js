@@ -1,4 +1,4 @@
-class playlistList extends React.Component {
+class PlaylistList extends React.Component {
   state = {
     playlists: []
   }
